@@ -47,6 +47,15 @@
             "pestphp/pest-plugin": true
         }
     },
+    "scripts": {
+        "post-install-cmd": [
+            "@patch-vendor"
+        ],
+        "post-update-cmd": [
+            "@patch-vendor"
+        ],
+        "patch-vendor": "patch -p1 --forward --silent < patches/fix-nullable-deprecations.patch || true"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "bin": ["builds/porter"]
