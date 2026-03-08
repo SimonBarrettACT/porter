@@ -16,16 +16,16 @@
         }
     ],
     "require": {
-        "php": "^8.1"
+        "php": "^8.2"
     },
     "require-dev": {
-        "laravel-zero/framework": "^10.0",
+        "laravel-zero/framework": "^12.0",
         "laravel/pint": "^1.2",
-        "mockery/mockery": "^1.4.4",
-        "nunomaduro/termwind": "^1.15",
-        "pestphp/pest": "^2.0",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/termwind": "^2.0",
+        "pestphp/pest": "^3.0",
         "phpxmlrpc/phpxmlrpc": "^4.9",
-        "symfony/yaml": "^6.2|^7.0"
+        "symfony/yaml": "^7.0"
     },
     "autoload": {
         "psr-4": {
@@ -46,15 +46,6 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "@patch-vendor"
-        ],
-        "post-update-cmd": [
-            "@patch-vendor"
-        ],
-        "patch-vendor": "patch -p1 --forward --silent < patches/fix-nullable-deprecations.patch || true"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
